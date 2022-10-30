@@ -76,7 +76,7 @@
 | `hostid`    | Shell Utilities | Prints the numeric identifier for the current host                                         | TODO   |
 | `id`        | Shell Utilities | Prints the real or effective UID and GID                                                   | TODO   |
 | `link`      | Shell Utilities | Creates a link to a file                                                                   | TODO   |
-| `logname`   | Shell Utilities | Prints the user's login name                                                               | TODO   |
+| `logname`   | Shell Utilities | Prints the user's login name                                                               | Done   |
 | `nice`      | Shell Utilities | Modifies scheduling priority                                                               | TODO   |
 | `nohup`     | Shell Utilities | Allows a command to continue running after loggin out                                      | TODO   |
 | `nproc`     | Shell Utilities | Queries the number of (active) processors                                                  | TODO   |

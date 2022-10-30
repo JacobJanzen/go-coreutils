@@ -7,14 +7,13 @@ import (
 	"github.com/JacobJanzen/go-coreutils/pkg/cmd_options"
 	"github.com/JacobJanzen/go-coreutils/pkg/system"
 	"github.com/JacobJanzen/go-coreutils/pkg/templates"
-	"golang.org/x/sys/unix"
 )
 
 func main() {
 	opts := templates.BasicOpts
-	opts.HelpMessage.Usage = "whoami [OPTION]..."
-	opts.HelpMessage.Description = "Print the user name associated with the current effective user ID."
-	opts.VersionMessage.Name = "whoami"
+	opts.HelpMessage.Usage = "logname [OPTION]..."
+	opts.HelpMessage.Description = "Print the user's login name."
+	opts.VersionMessage.Name = "logname"
 	opts.VersionMessage.Version = "1.0"
 	_ = cmd_options.ParseOptionsFromArgs(os.Args[1:], &opts)
 
@@ -22,12 +21,7 @@ func main() {
 		return
 	}
 
-	uid := unix.Geteuid()
-	if uid < 0 {
-		fmt.Fprintf(os.Stderr, "error invalid user id\n")
-	}
-
-	username, err := system.GetUsername(uint(uid))
+	username, err := system.GetLogin()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 		os.Exit(1)
