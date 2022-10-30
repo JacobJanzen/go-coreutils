@@ -13,6 +13,10 @@ import (
 	"github.com/JacobJanzen/go-coreutils/pkg/cmd_options"
 	"golang.org/x/sys/unix"
 )
+import (
+	"github.com/JacobJanzen/go-coreutils/pkg/system"
+	"github.com/JacobJanzen/go-coreutils/pkg/templates"
+)
 
 type Options struct {
 	version bool
@@ -38,22 +42,21 @@ func printVersionMessage() {
 }
 
 func main() {
-	opts := Options{}
+	opts := templates.BasicOpts
+	opts.HelpMessage.Usage = "whoami [OPTION]..."
+	opts.HelpMessage.Description = "Print the user name associated with the current effective user ID."
 	_ = cmd_options.ParseOptionsFromArgs(os.Args[1:], &opts)
 
-	if opts.help {
-		printHelpMessage()
-		return
-	}
-	if opts.version {
-		printVersionMessage()
+	if opts.CallBasicOptions() {
 		return
 	}
 
 	uid := unix.Geteuid()
-	pw := C.getpwuid(C.uint(uid))
-
-	if pw != nil {
-		fmt.Println(C.GoString(pw.pw_name))
+	username, err := system.GetUsername(uint(uid))
+	if err != nil {
+		fmt.Fprintf(os.Stderr, err.Error())
+		os.Exit(1)
 	}
+
+	fmt.Println(username)
 }

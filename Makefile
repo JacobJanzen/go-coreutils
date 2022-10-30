@@ -7,5 +7,8 @@ all:
 test:
 	go test ./...
 
+test-clear:
+	go clean -testcache
+
 clean:
 	rm wordle-bot
