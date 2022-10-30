@@ -79,7 +79,7 @@
 | `logname`   | Shell Utilities | Prints the user's login name                                                               | Done   |
 | `nice`      | Shell Utilities | Modifies scheduling priority                                                               | TODO   |
 | `nohup`     | Shell Utilities | Allows a command to continue running after loggin out                                      | TODO   |
-| `nproc`     | Shell Utilities | Queries the number of (active) processors                                                  | TODO   |
+| `nproc`     | Shell Utilities | Queries the number of (active) processors                                                  | Done   |
 | `pathchk`   | Shell Utilities | Checks whether fiels names are valid or portable                                           | TODO   |
 | `pinky`     | Shell Utilities | A lightweight version of finger                                                            | TODO   |
 | `printenv`  | Shell Utilities | Prints environment variables                                                               | TODO   |
