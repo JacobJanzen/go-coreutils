@@ -4,18 +4,10 @@ import (
 	"fmt"
 	"os"
 
-	/*
-	   #include <pwd.h>
-	   #include <sys/types.h>
-	*/
-	"C"
-
 	"github.com/JacobJanzen/go-coreutils/pkg/cmd_options"
-	"golang.org/x/sys/unix"
-)
-import (
 	"github.com/JacobJanzen/go-coreutils/pkg/system"
 	"github.com/JacobJanzen/go-coreutils/pkg/templates"
+	"golang.org/x/sys/unix"
 )
 
 type Options struct {
