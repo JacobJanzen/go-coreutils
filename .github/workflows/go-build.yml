@@ -16,6 +16,7 @@ jobs:
       - name: Install dependencies
         run: |
           go get golang.org/x/sys/unix
+          go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: Build
         run: make
