@@ -10,29 +10,6 @@ import (
 	"golang.org/x/sys/unix"
 )
 
-type Options struct {
-	version bool
-	help    bool
-}
-
-func (o *Options) SetShortOption(opt rune) {}
-func (o *Options) SetLongOption(opt string) {
-	switch opt {
-	case "version":
-		o.version = true
-	case "help":
-		o.help = true
-	}
-}
-
-func printHelpMessage() {
-	fmt.Println("HELP MESSAGE")
-}
-
-func printVersionMessage() {
-	fmt.Println("VERSION MESSAGE")
-}
-
 func main() {
 	opts := templates.BasicOpts
 	opts.HelpMessage.Usage = "whoami [OPTION]..."
@@ -44,9 +21,13 @@ func main() {
 	}
 
 	uid := unix.Geteuid()
+	if uid < 0 {
+		fmt.Fprintf(os.Stderr, "error invalid user id\n")
+	}
+
 	username, err := system.GetUsername(uint(uid))
 	if err != nil {
-		fmt.Fprintf(os.Stderr, err.Error())
+		fmt.Fprintf(os.Stderr, "%s\n", err.Error())
 		os.Exit(1)
 	}
 
