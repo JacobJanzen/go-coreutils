@@ -7,8 +7,8 @@ import (
 		#include <unistd.h>
 	*/
 	"C"
+	"fmt"
 )
-import "fmt"
 
 func GetUsername(uid uint) (string, error) {
 	pw := C.getpwuid(C.uint(uid))
