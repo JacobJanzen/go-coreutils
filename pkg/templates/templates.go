@@ -1,8 +1,6 @@
 package templates
 
 import (
-	"fmt"
-
 	"github.com/JacobJanzen/go-coreutils/pkg/basic_options"
 )
 
@@ -15,7 +13,9 @@ var versionLong = "version"
 var versionDesc = "output version information and exit"
 
 var copyright = "Copyright (C) 2022 Jacob Janzen"
-var license = fmt.Sprintf("License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to change and redistribute it.\nThere is NO WARRANTY, to the extent permitted by law.")
+var license = `License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.`
 var author = "Jacob Janzen"
 
 var BasicOpts = basic_options.BasicOptions{
