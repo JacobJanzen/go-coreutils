@@ -71,7 +71,7 @@
 | `env`       | Shell Utilities | Displays and modifies environment variables                                                | TODO   |
 | `expr`      | Shell Utilities | Evaluates expressions                                                                      | TODO   |
 | `factor`    | Shell Utilities | Factors numbers                                                                            | TODO   |
-| `false`     | Shell Utilities | Does nothing, but exits unsuccessfully                                                     | TODO   |
+| `false`     | Shell Utilities | Does nothing, but exits unsuccessfully                                                     | Done   |
 | `groups`    | Shell Utilities | Prints the groups of which the user is a member                                            | TODO   |
 | `hostid`    | Shell Utilities | Prints the numeric identifier for the current host                                         | TODO   |
 | `id`        | Shell Utilities | Prints the real or effective UID and GID                                                   | TODO   |
