@@ -96,7 +96,7 @@
 | `test`      | Shell Utilities | Evaluates an expression                                                                    | TODO   |
 | `timeout`   | Shell Utilities | Run a command with a time limit                                                            | TODO   |
 | `true`      | Shell Utilities | Does nothing, but exits successfully                                                       | Done   |
-| `tty`       | Shell Utilities | Prints terminal name                                                                       | TODO   |
+| `tty`       | Shell Utilities | Prints terminal name                                                                       | Done   |
 | `uname`     | Shell Utilities | Prints system information                                                                  | TODO   |
 | `unlink`    | Shell Utilities | Removes the specified file using the unlink function                                       | TODO   |
 | `uptime`    | Shell Utilities | Tells how long the system has been running                                                 | TODO   |
